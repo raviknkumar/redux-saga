@@ -3,7 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
 
 import { reducer } from "./dogs/Reducers";
-import { watcherSaga } from "./dogs/Saga";
+import rootSaga from './RootSaga';
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
@@ -18,6 +18,6 @@ let store = createStore(
 );
 
 // run the saga
-sagaMiddleware.run(watcherSaga);
+sagaMiddleware.run(rootSaga);
 
 export default store;

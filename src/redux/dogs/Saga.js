@@ -8,7 +8,7 @@ const {handleFetchDogsSuccess, handleFetchDogsFailure} = actions;
 const {API_CALL_REQUEST, DEMO} = actionTypes;
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
-export function* watcherSaga() {
+export function* dogSaga() {
   yield takeLatest(API_CALL_REQUEST, workerSaga);
   yield takeLatest(DEMO, demoSaga);
 }
